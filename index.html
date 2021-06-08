@@ -1,0 +1,125 @@
+function restoreColor(){
+  if (localStorage.bgColor){
+    changeBodyColor(localStorage.bgColor);
+  }
+  if (localStorage.txtColor){
+    changeTxtColor(localStorage.txtColor);
+  }
+  if (localStorage.headColor){
+  changeHeadingColor(localStorage.headColor);
+  }
+  if (localStorage.lnkColor){
+    changeLinkColor(localStorage.lnkColor);
+  }
+  if (localStorage.fontSize){
+    changeFontSize(localStorage.fontSize);
+  }
+  }
+  function changeTxtColor(color){
+    localStorage.txtColor = color;
+    document.body.style.color = color;
+    }
+    
+  
+  function changeBodyColor(color){
+  localStorage.bgColor = color;
+    changeLinkColor("yellow")
+    document.body.style.backgroundColor = color;
+    if (color == "white"){
+    document.body.style.color = "black";
+    changeLinkColor("blue");
+    }
+    else if (color == "black"){
+    document.body.style.color = "white";
+    }
+    else if (color == "yellow"){
+    document.body.style.color = "black";
+    changeLinkColor("blue");
+    }
+    else if (color == "purple"){
+    document.body.style.color = "white";  
+    }
+    else if (color == "blue"){
+    document.body.style.color = "white";
+    }
+    else if (color == "green"){
+    document.body.style.color = "black";  
+    changeLinkColor("blue");
+    }
+    else if (color == "orange"){
+    changeLinkColor("blue");
+    }
+    
+    
+  }
+  
+  function toggleShare() {
+    var x = document.getElementById("share");
+    if (x.style.display === "none") {
+    x.style.display = "block";
+    }
+     else {
+    x.style.display = "none";
+    }
+  }
+  
+  
+  
+  function changeLinkColor(color){
+    localStorage.lnkColor = color;
+    var links = document.getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++){
+    links[i].style.color = color;
+    }
+    
+    
+  }
+  
+  function changeHeadingColor(color){
+    localStorage.headColor = color;
+    var h1s = document.getElementsByTagName("h1");
+    var h2s = document.getElementsByTagName("h2");
+    var h3s = document.getElementsByTagName("h3");
+    for (var i = 0; i < h1s.length; i++){
+     h1s[i].style.color = color;
+    }
+    for (var i = 0; i < h2s.length; i++){
+     h2s[i].style.color = color;
+    }
+    for (var i = 0; i < h3s.length; i++){
+     h3s[i].style.color = color;
+    }
+  }
+  
+  function restoreBgColor(){
+  if (localStorage.bgColor){
+    changeBodyColor(localStorage.bgColor);
+  }
+  if (localStorage.txtColor){
+    changeTxtColor(localStorage.txtColor);
+  }
+  if (localStorage.headColor){
+  changeHeadingColor(localStorage.headColor);
+  }
+  if (localStorage.lnkColor){
+    changeLinkColor(localStorage.lnkColor);
+  }
+  if (localStorage.fontSize){
+    changeFontSize(localStorage.fontSize);
+  }
+  }
+    
+  
+  function toggleMenu(){
+    if (document.getElementById("topmenu").innerHTML != ''){
+    document.getElementById("topmenu").innerHTML = '';
+    }
+  else{
+    document.getElementById("topmenu").innerHTML = list;
+  }
+  }
+  
+  function changeFontSize(size){
+  localStorage.fontSize = size;
+  document.body.style.fontSize = size;
+  }
